@@ -13,6 +13,10 @@ extension Date {
         Calendar.current.dateInterval(of: .year, for: self)!.start
     }
     
+    public var weeksSinceStartOfYear: Int {
+        Calendar.current.dateComponents([.weekOfYear], from: self.startOfYear, to: self).weekOfYear ?? 0
+    }
+    
     //MARK: Month Helpers
     public var startOfMonth: Date {
         Calendar.current.dateInterval(of: .month, for: self)!.start
@@ -29,6 +33,10 @@ extension Date {
     
     public var endOfWeek: Date {
         Calendar.current.dateInterval(of: .weekOfYear, for: self)!.end
+    }
+    
+    public func addWeeksToDate(numWeeks: Int) -> Date {
+        Calendar.current.date(byAdding: .weekOfYear, value: numWeeks, to: self)!
     }
     
     // TODO: Get the calendar week number for a date
