@@ -26,5 +26,17 @@ extension Date {
     public var endOfWeek: Date {
         Calendar.current.dateInterval(of: .weekOfYear, for: self)!.end
     }
+    
+    // TODO: Get the calendar week number for a date
+    public var calendarWeekNumber: Int {
+        print(Calendar.current.dateInterval(of: .weekOfYear, for: self)!)
+        return 0
+    }
+    
+    //TODO: See where this should actually be placed because
+    // this file is maybe not the best
+    public func firstDayOfWeekNum(_ weekNum: Int) -> Date {
+        return Date().startOfWeek
+    }
 
 }
