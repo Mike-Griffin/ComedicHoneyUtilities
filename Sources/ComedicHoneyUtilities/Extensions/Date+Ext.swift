@@ -10,7 +10,7 @@ import Foundation
 extension Date {
     
     //MARK: Month Helpers
-    var startOfMonth: Date {
+    public var startOfMonth: Date {
         Calendar.current.dateInterval(of: .month, for: self)!.start
     }
     
