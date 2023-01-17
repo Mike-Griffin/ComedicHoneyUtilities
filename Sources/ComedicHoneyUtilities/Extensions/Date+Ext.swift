@@ -17,5 +17,14 @@ extension Date {
     public var endOfMonth: Date {
         Calendar.current.dateInterval(of: .month, for: self)!.end
     }
+    
+    //MARK: Week Helpers
+    public var startOfWeek: Date {
+        Calendar.current.dateInterval(of: .weekOfYear, for: self)!.start
+    }
+    
+    public var endOfWeek: Date {
+        Calendar.current.dateInterval(of: .weekOfYear, for: self)!.end
+    }
 
 }
