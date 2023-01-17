@@ -8,6 +8,10 @@
 import Foundation
 
 extension Date {
+    //MARK: Year Helpers
+    var startOfYear: Date {
+        Calendar.current.dateInterval(of: .year, for: self)!.start
+    }
     
     //MARK: Month Helpers
     public var startOfMonth: Date {
@@ -29,7 +33,7 @@ extension Date {
     
     // TODO: Get the calendar week number for a date
     public var calendarWeekNumber: Int {
-        print(Calendar.current.dateInterval(of: .weekOfYear, for: self)!)
+        print(Calendar.current.dateInterval(of: .yearForWeekOfYear, for: self)!)
         return 0
     }
     
