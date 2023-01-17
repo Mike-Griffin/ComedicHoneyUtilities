@@ -9,7 +9,7 @@ import Foundation
 
 extension Date {
     //MARK: Year Helpers
-    var startOfYear: Date {
+    public var startOfYear: Date {
         Calendar.current.dateInterval(of: .year, for: self)!.start
     }
     
