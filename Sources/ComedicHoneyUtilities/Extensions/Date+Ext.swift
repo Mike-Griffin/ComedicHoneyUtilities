@@ -17,6 +17,11 @@ extension Date {
         Calendar.current.dateComponents([.weekOfYear], from: self.startOfYear, to: self).weekOfYear ?? 0
     }
     
+    public var yearDisplayString: String {
+        return self.formatted(.dateTime.year())
+        
+    }
+    
     //MARK: Month Helpers
     public var startOfMonth: Date {
         Calendar.current.dateInterval(of: .month, for: self)!.start
@@ -38,17 +43,4 @@ extension Date {
     public func addWeeksToDate(numWeeks: Int) -> Date {
         Calendar.current.date(byAdding: .weekOfYear, value: numWeeks, to: self)!
     }
-    
-    // TODO: Get the calendar week number for a date
-    public var calendarWeekNumber: Int {
-        print(Calendar.current.dateInterval(of: .yearForWeekOfYear, for: self)!)
-        return 0
-    }
-    
-    //TODO: See where this should actually be placed because
-    // this file is maybe not the best
-    public func firstDayOfWeekNum(_ weekNum: Int) -> Date {
-        return Date().startOfWeek
-    }
-
 }
